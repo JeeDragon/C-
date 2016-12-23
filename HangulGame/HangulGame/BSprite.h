@@ -7,11 +7,16 @@
 class BSprite : public sf::Drawable, public sf::Transformable
 {
 public:
-	BSprite(b2World* , int, float32, float32);
+	BSprite(b2World* , int, b2BodyType, float32, float32);
 	~BSprite();
 	void update(sf::Event &e, sf::RenderWindow &window);
+	bool equal(b2Body*);
+	void playSound(int);
+	void startContact();
+	void endContact();
 
 private:
+	bool contact;
 	b2World* world;
 	b2Body* body;
 	b2Fixture* fixture;

@@ -132,6 +132,7 @@
   <ItemGroup>
     <ClInclude Include="Box2dSimulation.h" />
     <ClInclude Include="BSprite.h" />
+    <ClInclude Include="BSpriteContactListener.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

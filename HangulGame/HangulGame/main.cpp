@@ -3,6 +3,7 @@
 #include "Box2dSimulation.h"
 #include "BSprite.h"
 
+
 int main()
 {	
 
@@ -23,7 +24,9 @@ int main()
 	//sf::View view1;
 	//view1.setSize(1280, 720);
 	//view1.setCenter(1280 / 2, 720 / 2);
-	//view1.setViewport(sf::FloatRect(0, 0, 1, 1));
+	//view1.setViewport(sf::FloatRect(0, 0, 0.98F, 0.98F));
+	////view1.zoom(0.5f);
+	//window.setView(view1);
 	//
 
 	//sf::View minimap;
@@ -57,23 +60,25 @@ int main()
 		float32 y = sf::Mouse::getPosition(window).y;
 
 
-		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
-		{
-			float32 x = sf::Mouse::getPosition(window).x;
-			float32 y = sf::Mouse::getPosition(window).y;
+		//if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+		//{
+		//	float32 x = sf::Mouse::getPosition(window).x;
+		//	float32 y = sf::Mouse::getPosition(window).y;
 
-			simulation.add(0, x, y);
-		}
+		//	simulation.add(0, x, y);
+		//}
 		if(sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 			simulation.add(0, x, y);
 		else if(sf::Keyboard::isKeyPressed(sf::Keyboard::B))
 			simulation.add(1, x, y);
 		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::C))
 			simulation.add(2, x, y);
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::P))
 			simulation.add(3, x, y);
 		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::E))
 			simulation.add(4, x, y);
+		else if (sf::Mouse::isButtonPressed(sf::Mouse::Right))
+			simulation.add(5, x, y);
 
 		simulation.step();
 		std::vector<BSprite*> sprites = simulation.getBSprites();
