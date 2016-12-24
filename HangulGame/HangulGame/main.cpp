@@ -102,7 +102,8 @@ int main()
 
 		p->update(event, window);
 		window.draw(background);
-		window.draw((*p));
+		window.draw((*p)); 
+
 		//window.draw(triangle);
 
 		/*for (spriteIterator = sprites.begin(); spriteIterator != sprites.end(); spriteIterator++)
