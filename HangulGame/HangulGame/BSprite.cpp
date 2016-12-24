@@ -161,7 +161,7 @@ void BSprite::update(Event &e, RenderWindow &window)
 
 	if (Mouse::isButtonPressed(Mouse::Left) && fixture->TestPoint(b2Vec2(mouseX / SCALE, mouseY / SCALE)))
 	{
-		texture->loadFromFile("../resources/blastoise.png");
+		texture->loadFromFile("../resources/pokemon/blastoise.png");
 		sprite->setTexture((*texture));
 	}
 

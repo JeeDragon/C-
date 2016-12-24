@@ -128,11 +128,13 @@
     <ClCompile Include="Box2dSimulation.cpp" />
     <ClCompile Include="BSprite.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Pikachu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Box2dSimulation.h" />
     <ClInclude Include="BSprite.h" />
     <ClInclude Include="BSpriteContactListener.h" />
+    <ClInclude Include="Pikachu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

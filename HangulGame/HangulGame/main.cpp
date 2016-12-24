@@ -1,13 +1,14 @@
 #include <SFML\Graphics.hpp>
 #include <Box2D\Box2D.h>
-#include "Box2dSimulation.h"
-#include "BSprite.h"
+//#include "Box2dSimulation.h"
+//#include "BSprite.h"
+#include "Pikachu.h"
 
 
 int main()
 {	
 
-	Box2dSimulation simulation;
+	//Box2dSimulation simulation;
 	// Render window settings
 	sf::ContextSettings settings;
 	settings.antialiasingLevel = 4;
@@ -44,8 +45,22 @@ int main()
 	sf::Sprite background;
 	background.setTexture(texture);
 
-	std::vector<BSprite*>::iterator spriteIterator;
 
+	//sf::VertexArray triangle(sf::Triangles, 3);
+
+	//// define the position of the triangle's points
+	//triangle[0].position = sf::Vector2f(10, 10);
+	//triangle[1].position = sf::Vector2f(100, 10);
+	//triangle[2].position = sf::Vector2f(100, 100);
+
+	//// define the color of the triangle's points
+	//triangle[0].color = sf::Color::Red;
+	//triangle[1].color = sf::Color::Blue;
+	//triangle[2].color = sf::Color::Green;
+
+	//std::vector<BSprite*>::iterator spriteIterator;
+
+	Pikachu *p = new Pikachu();
 	while (window.isOpen())
 	{
 		
@@ -56,8 +71,8 @@ int main()
 				window.close();
 		}
 
-		float32 x = sf::Mouse::getPosition(window).x;
-		float32 y = sf::Mouse::getPosition(window).y;
+		//float32 x = sf::Mouse::getPosition(window).x;
+		//float32 y = sf::Mouse::getPosition(window).y;
 
 
 		//if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
@@ -67,7 +82,7 @@ int main()
 
 		//	simulation.add(0, x, y);
 		//}
-		if(sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+		/*if(sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 			simulation.add(0, x, y);
 		else if(sf::Keyboard::isKeyPressed(sf::Keyboard::B))
 			simulation.add(1, x, y);
@@ -82,15 +97,19 @@ int main()
 
 		simulation.step();
 		std::vector<BSprite*> sprites = simulation.getBSprites();
-
+*/
 		window.clear();
-		window.draw(background);
 
-		for (spriteIterator = sprites.begin(); spriteIterator != sprites.end(); spriteIterator++)
+		p->update(event, window);
+		window.draw(background);
+		window.draw((*p));
+		//window.draw(triangle);
+
+		/*for (spriteIterator = sprites.begin(); spriteIterator != sprites.end(); spriteIterator++)
 		{
 			(*spriteIterator)->update(event, window);
 			window.draw((*(*spriteIterator)));
-		}
+		}*/
 
 		
 		window.display();
